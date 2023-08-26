@@ -1,5 +1,5 @@
 CLS
-$RD = Get-RDUserSession -ConnectionBroker Ariadna.mures.global -CollectionName "YOU_COLLECTION_HERE"
+$RD = Get-RDUserSession -ConnectionBroker "YOUR_CONNECTION_BROKER_HERE" -CollectionName "YOUR_COLLECTION_HERE"
 foreach ($item in $RD) 
 {
     $UsessionID = $item.UnifiedSessionId -as [int]
