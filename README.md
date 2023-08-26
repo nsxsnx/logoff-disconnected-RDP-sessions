@@ -1,4 +1,4 @@
-# ps-RDP_disconnected_users_logoff
+# logoff-disconnected-RDP-sessions
 Logoff RDS users who were disconnected for more than 5 minutes
 
 # How to use
