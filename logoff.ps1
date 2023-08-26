@@ -6,7 +6,6 @@ foreach ($item in $RD)
     $sessionID = $item.SessionId -as [int]
     if ($item.SessionState -eq "STATE_DISCONNECTED" -and $item.DisconnectTime -ne $null -and $item.UnifiedSessionId -ne $null)
     {
-        #if ($item.UserName -ne "testuser")  {continue}
         write-host $Item.UserName " " -ForegroundColor "magenta" -NoNewline
         write-host  $item.SessionState "since" $item.DisconnectTime -NoNewline
         write-host " Unified SId:" $UsessionID "User SId:" $sessionID -ForegroundColor "darkcyan" -NoNewline
@@ -17,7 +16,7 @@ foreach ($item in $RD)
             write-host "Disconnected for less than 5 minutes" -ForegroundColor "Green"
             continue
         }
-        #Invoke-RDUserLogoff -HostServer $item.HostServer -UnifiedSessionID $UsessionID -Force -verbose #-erroraction 'silentlycontinue'
+        Invoke-RDUserLogoff -HostServer $item.HostServer -UnifiedSessionID $UsessionID -Force -verbose #-erroraction 'silentlycontinue'
         write-host "killed" -ForegroundColor "red"
         }
 }
